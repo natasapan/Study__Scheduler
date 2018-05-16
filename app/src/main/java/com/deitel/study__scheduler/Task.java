@@ -5,4 +5,6 @@ package com.deitel.study__scheduler;
  */
 
 public class Task {
+
+
 }

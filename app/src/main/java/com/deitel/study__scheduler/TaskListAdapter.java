@@ -1,5 +1,7 @@
 package com.deitel.study__scheduler;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,6 +14,16 @@ import java.util.List;
  */
 
 public class TaskListAdapter extends BaseAdapter {
+
+   private Context mContext;
+   private int mresource;
+
+
+    public TaskListAdapter(Context context, int resource) {
+
+        this.mContext = context;
+        this.mresource = resource;
+    }
 
     private final List<Task> mItems = new ArrayList<>();
 
@@ -32,6 +44,14 @@ public class TaskListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+
+        LayoutInflater lf = LayoutInflater.from(mContext);
+        view = lf.inflate(mresource, viewGroup, false);
+
+
+
+
+
+        return view;
     }
 }

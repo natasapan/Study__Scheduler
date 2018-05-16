@@ -1,5 +1,6 @@
 package com.deitel.study__scheduler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 public class RegisterActivity  extends AppCompatActivity {
 
     EditText nameEdit, userNameEdit, passwordEdit;
-    String name, userName,password;
+    //String name, userName,password;
     Button regButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +23,19 @@ public class RegisterActivity  extends AppCompatActivity {
 
         nameEdit = (EditText) findViewById(R.id.name_edittext);
         userNameEdit = (EditText) findViewById(R.id.username_edittext);
-        passwordEdit = (EditText) findViewById(R.id.password_edittext);
-        regButton = (Button) findViewById(R.id.registerButton);
+        passwordEdit = findViewById(R.id.password_edittext);
+        regButton = (Button) findViewById(R.id.register_button);
 
-        regButton.setOnClickListener((new View.OnClickListener() {
+        regButton.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
-            public void onClick(View view) {
-
-                userRegister(view);
-                // TODO send user to the create task list activity
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
+                startActivity(intent);
             }
-        }));
-    }
+        });
+}
 
     @Override
     protected void onStart() {
@@ -61,7 +63,7 @@ public class RegisterActivity  extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void userRegister(View v){
+    /*public void userRegister(View v){
 
         name = nameEdit.getText().toString();
         userName = userNameEdit.getText().toString();
@@ -71,6 +73,6 @@ public class RegisterActivity  extends AppCompatActivity {
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method, name, userName,password);
         finish();
-    }
+    }-*/
 
 }

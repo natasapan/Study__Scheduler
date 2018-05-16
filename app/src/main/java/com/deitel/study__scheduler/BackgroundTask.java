@@ -2,17 +2,6 @@ package com.deitel.study__scheduler;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
-
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 
 /**
  * Created by natas on 5/9/2018.
@@ -28,6 +17,11 @@ public class BackgroundTask extends AsyncTask<String, Void, String>{
     }
 
     @Override
+    protected String doInBackground(String... strings) {
+        return null;
+    }
+
+   /* @Override
     protected String doInBackground(String... params) {
 
         String method = params[0];
@@ -86,6 +80,6 @@ public class BackgroundTask extends AsyncTask<String, Void, String>{
     @Override
     protected void onPostExecute(String result) {
         Toast.makeText(c,result, Toast.LENGTH_LONG).show();
-    }
+    }-*/
 }
 

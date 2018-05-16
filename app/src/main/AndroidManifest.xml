@@ -22,7 +22,6 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
         <meta-data
@@ -38,7 +37,34 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+        android:name=".CalendarActivity"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:parentActivityName=".RegisterActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".RegisterActivity" />
+    </activity>
+        <activity
+        android:name=".SubjectListActivity"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:parentActivityName=".CalendarActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".CalendarActivity" />
+    </activity>
 
+        <activity
+            android:name=".TaskListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".SubjectListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SubjectListActivity" />
+        </activity>
 
     </application>
 

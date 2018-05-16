@@ -15,6 +15,8 @@ public class SubjectListAdapter extends BaseAdapter {
 
     private final List<Subject> mItems = new ArrayList<>();
 
+
+
     @Override
     public int getCount() {
         return 0;
