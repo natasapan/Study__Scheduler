@@ -20,9 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String INFORMATION= "Information";
     private static final String SID = "_id_S";
 
-
-
-
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
@@ -34,7 +31,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE USERS (_id INTEGER PRIMARY KEY AUTOINCREMENT, Username VARCHAR(255), Pasword VARCHAR(255));");
         db.execSQL("CREATE TABLE SUBJECTS (_id_S INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(255), Information BLOB," +
                 " FOREIGN KEY(_id_S) REFERENCES USERS(_id) );");
-
 
     }
 

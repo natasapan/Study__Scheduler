@@ -67,6 +67,15 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:text="@string/date" />
+
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:text="@string/done" />
     </GridLayout>
 
 
@@ -74,7 +83,8 @@
         android:id="@+id/itemListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:descendantFocusability="beforeDescendants">
+        android:descendantFocusability="afterDescendants"
+        android:focusable="false">
 
 
     </ListView>

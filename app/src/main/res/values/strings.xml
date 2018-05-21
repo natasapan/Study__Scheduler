@@ -7,9 +7,9 @@
     <string name="hint_text_surname">Surname</string>
     <string name="hint_text_username">Username</string>
     <string name="hint_text_password">Password</string>
-    <string name="submit">Submitt</string>
-    <string name="create_list">Create Task List For Selected Date</string>
-    <string name="create_task_list">Create Task List For Selected Subjects</string>
+    <string name="submit">Submit</string>
+    <string name="create_list">Create Subjects List For Selected Date</string>
+    <string name="create_task_list">Click to Create a Task</string>
     <string name="task_list">TASK LIST SUBJECTS</string>
     <string name="image_view">Image of the subject</string>
     <string name="save">Save</string>
@@ -17,5 +17,7 @@
     <string name="timer">Timer</string>
     <string name="subject_name">Subject name</string>
     <string name="date">Date</string>
+    <string name="select">Select a date to create subjects list</string>
+    <string name="done">Back</string>
 
 </resources>

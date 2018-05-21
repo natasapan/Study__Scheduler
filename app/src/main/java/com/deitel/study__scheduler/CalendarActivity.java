@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CalendarView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by natas on 5/13/2018.
@@ -13,6 +15,7 @@ import android.widget.CalendarView;
 public class CalendarActivity extends AppCompatActivity {
 
     CalendarView calendar;
+    TextView create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,7 @@ public class CalendarActivity extends AppCompatActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                //Toast.makeText(getApplicationContext(), ""+dayOfMonth, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), ""+dayOfMonth+"/"+month+"/"+year, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CalendarActivity.this, SubjectListActivity.class);
                 startActivity(intent);
             }

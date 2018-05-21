@@ -16,41 +16,64 @@ import java.util.List;
 public class TaskListAdapter extends BaseAdapter {
 
    private Context mContext;
-   private int mresource;
+    private List<Task> mItems = new ArrayList<>();
 
 
-    public TaskListAdapter(Context context, int resource) {
+    public TaskListAdapter(Context context) {
+
 
         this.mContext = context;
-        this.mresource = resource;
+       
     }
 
-    private final List<Task> mItems = new ArrayList<>();
+
+
+    public void add(Task item) {
+
+
+        mItems.add(item);
+        notifyDataSetChanged();
+
+    }
+
+    public void clear() {
+
+        mItems.clear();
+        notifyDataSetChanged();
+    }
+
+    public void removeItem(int pos){
+        mItems.remove(pos);
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getCount() {
-        return 0;
+
+        return mItems.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Task getItem(int pos) {
+
+        return mItems.get(pos);
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
+    public long getItemId(int pos) {
+
+        return pos;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        LayoutInflater lf = LayoutInflater.from(mContext);
-        view = lf.inflate(mresource, viewGroup, false);
+        if(view == null) {
 
-
-
-
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.task_list_item, viewGroup,false);
+        }
 
         return view;
     }

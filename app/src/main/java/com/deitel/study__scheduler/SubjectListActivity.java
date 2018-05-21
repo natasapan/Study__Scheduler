@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,10 +19,13 @@ import java.util.ArrayList;
 public class SubjectListActivity extends AppCompatActivity{
     String[] mSubArray;
     ArrayList<String> mTaskArray;
+    private String str;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects_list);
+
+
 
         final ArrayAdapter<String> adapter;
         final ArrayAdapter<String> adapt;
@@ -53,21 +55,14 @@ public class SubjectListActivity extends AppCompatActivity{
                 mTaskArray);
         taskLv.setAdapter(adapt);
 
-        taskLv.setFooterDividersEnabled(true);
-
-        TextView footerView;
-        footerView = (TextView) getLayoutInflater().inflate(
-                R.layout.footerview, null);
-
-        taskLv.addFooterView(footerView);
-
-        footerView.setOnClickListener(new View.OnClickListener() {
+        taskLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getApplicationContext(), TaskListActivity.class);
-                startActivity(intent);
-
+                    str = adapt.getItem(position - 1);
+                    Intent intent = new Intent(getApplicationContext(), TaskListActivity.class);
+                    intent.putExtra("SUBJECT", str);
+                    startActivity(intent);
             }
         });
 

@@ -7,4 +7,13 @@ package com.deitel.study__scheduler;
 public class Task {
 
 
+private String task;
+
+Task(String task){
+
+    this.task = task;
+}
+    public String getTask() {
+        return task;
+    }
 }

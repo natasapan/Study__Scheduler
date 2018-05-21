@@ -2,29 +2,29 @@
 <resources>
     <string-array name="subject_list">
 
-        <item>Accounting</item>
-        <item>Applied Maths</item>
-        <item>Art</item>
-        <item>Biology</item>
-        <item>Business Studies</item>
-        <item>Chemistry</item>
-        <item>English</item>
-        <item>French</item>
-        <item>Geography</item>
-        <item>German</item>
-        <item>History</item>
-        <item>Home Economics</item>
-        <item>Information Technology Maths</item>
-        <item>Irish</item>
-        <item>Maths</item>
-        <item>Music</item>
-        <item>Physical Education</item>
-        <item>Physics</item>
-        <item>Religion</item>
-        <item>Science</item>
-        <item>Spanish</item>
-        <item>Technical graphics</item>
-        <item>Technology and Design</item>
+        <item>ACCOUNTING</item>
+        <item>APPLIED MATHS</item>
+        <item>ART</item>
+        <item>BIOLOGY</item>
+        <item>BUSINESs STUD.</item>
+        <item>CHEMISTRY</item>
+        <item>ENGLISH</item>
+        <item>FRENCH</item>
+        <item>GEOGRAPHY</item>
+        <item>GERMAN</item>
+        <item>HISTORY</item>
+        <item>HOME ECONOMICS</item>
+        <item>INF. TECHNOLOGY</item>
+        <item>IRISH</item>
+        <item>MATHS</item>
+        <item>MUSIC</item>
+        <item>PHYSICAL EDUCATION</item>
+        <item>PHYSICS</item>
+        <item>RELIGION</item>
+        <item>SCIENCE</item>
+        <item>SPANISH</item>
+        <item>TECH. GRAPHICS</item>
+        <item>TECH. AND DESIGN</item>
 
     </string-array>
 

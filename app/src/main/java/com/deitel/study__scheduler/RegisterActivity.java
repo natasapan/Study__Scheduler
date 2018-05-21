@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by natas on 5/7/2018.
@@ -13,9 +14,13 @@ import android.widget.EditText;
 
 public class RegisterActivity  extends AppCompatActivity {
 
-    EditText nameEdit, userNameEdit, passwordEdit;
-    //String name, userName,password;
+    EditText nameEdit;
+    EditText userNameEdit;
+    EditText  passwordEdit;
+    String name, userName,password;
     Button regButton;
+    final String message = "Did not provide information needed. Try again.";
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,17 +28,31 @@ public class RegisterActivity  extends AppCompatActivity {
 
         nameEdit = (EditText) findViewById(R.id.name_edittext);
         userNameEdit = (EditText) findViewById(R.id.username_edittext);
-        passwordEdit = findViewById(R.id.password_edittext);
+        passwordEdit = (EditText)  findViewById(R.id.password_edittext);
         regButton = (Button) findViewById(R.id.register_button);
+
+        name = nameEdit.getText().toString();
+        userName = userNameEdit.getText().toString();
+        password = passwordEdit.getText().toString();
 
         regButton.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
+                if(name.length() == 0 || userName.length() == 0 || password.length() == 0){
+                    Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+                }
+
+                 else {
+
+                    userRegister(v);
+
+                    Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+               }
+
+           }
         });
 }
 
@@ -63,16 +82,13 @@ public class RegisterActivity  extends AppCompatActivity {
         super.onDestroy();
     }
 
-    /*public void userRegister(View v){
-
-        name = nameEdit.getText().toString();
-        userName = userNameEdit.getText().toString();
-        password = passwordEdit.getText().toString();
+    public void userRegister(View v){
 
         String method ="register";
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method, name, userName,password);
         finish();
-    }-*/
-
+    }
 }
+
+
