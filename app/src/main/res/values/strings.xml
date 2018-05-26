@@ -12,12 +12,16 @@
     <string name="create_task_list">Click to Create a Task</string>
     <string name="task_list">TASK LIST SUBJECTS</string>
     <string name="image_view">Image of the subject</string>
-    <string name="save">Save</string>
-    <string name="search">Search</string>
+    <string name="save">Save Tasks</string>
+    <string name="search">Search Inter.</string>
     <string name="timer">Timer</string>
     <string name="subject_name">Subject name</string>
     <string name="date">Date</string>
     <string name="select">Select a date to create subjects list</string>
     <string name="done">Back</string>
+    <string name="explain">Select subjects on the left. Click selected subjects on the right to opet subject\'s task list</string>
+    <string name="saved_lists">Search tasks</string>
+    <string name="enter_date">Click on desired date</string>
+
 
 </resources>

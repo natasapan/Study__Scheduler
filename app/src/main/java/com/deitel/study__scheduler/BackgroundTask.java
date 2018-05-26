@@ -1,6 +1,5 @@
 package com.deitel.study__scheduler;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -23,12 +22,9 @@ import java.net.URLEncoder;
 
 public class BackgroundTask extends AsyncTask<String, Void, String>{
 
-    private AlertDialog alertDialog;
-
-    Context c;
+    private static Context c;
 
     BackgroundTask(Context c){
-
         this.c = c;
     }
 
@@ -36,8 +32,8 @@ public class BackgroundTask extends AsyncTask<String, Void, String>{
     protected String doInBackground(String... params) {
 
         String method = params[0];
-        String reg_url = "http://10.0.2.2/Study_Scheduler/register.php";
-        String sign_in_url = "http://10.0.2.2/Study_Scheduler/login.php";
+        String reg_url = "http://192.168.0.220/Study_Scheduler/register.php";
+        String sign_in_url = "http://192.168.0.220/Study_Scheduler/login.php";
 
         if(method.equals("register")){
 
@@ -121,12 +117,9 @@ public class BackgroundTask extends AsyncTask<String, Void, String>{
     @Override
     protected void onPreExecute() {
 
-        alertDialog = new AlertDialog.Builder(c).create();
-        alertDialog.setTitle("Sign In Information");
-
+        super.onPreExecute();
 
     }
-
 
     @Override
     protected void onProgressUpdate(Void... values) {
@@ -136,13 +129,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String>{
     @Override
     protected void onPostExecute(String result) {
 
-        if (result.equals("Registration successful")) {
+       if (result != null && result.equals("Registration successful")) {
             Toast.makeText(c, result, Toast.LENGTH_SHORT).show();
         }
-        else{
-            alertDialog.setMessage(result);
-            alertDialog.show();
-        }
     }
-}
+    }
+
 

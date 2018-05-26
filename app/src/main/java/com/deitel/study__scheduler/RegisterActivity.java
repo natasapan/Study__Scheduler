@@ -31,27 +31,28 @@ public class RegisterActivity  extends AppCompatActivity {
         passwordEdit = (EditText)  findViewById(R.id.password_edittext);
         regButton = (Button) findViewById(R.id.register_button);
 
-        name = nameEdit.getText().toString();
-        userName = userNameEdit.getText().toString();
-        password = passwordEdit.getText().toString();
+
 
         regButton.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
+
+                name = nameEdit.getText().toString();
+                userName = userNameEdit.getText().toString();
+                password = passwordEdit.getText().toString();
+
                 if(name.length() == 0 || userName.length() == 0 || password.length() == 0){
                     Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
-                }
 
-                 else {
+                } else {
 
                     userRegister(v);
 
                     Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
                     startActivity(intent);
                }
-
            }
         });
 }
