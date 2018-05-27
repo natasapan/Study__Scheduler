@@ -72,26 +72,9 @@ public class SubjectListActivity extends AppCompatActivity{
         subjectLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (adapt.getCount() == 0) {
-                    String str = adapter.getItem(position - 1);
-                    adapt.add(str);
-                }
-                    for (int i = 0; i < adapt.getCount(); i++) {
-
-                        if ((adapter.getItem(position - 1).equals(adapt.getItem(i)))) {
-                            Toast.makeText(SubjectListActivity.this, "You already added this subject",
-                                    Toast.LENGTH_SHORT).show();
-                            break;
-
-                        } else {
-                            String str = adapter.getItem(position - 1);
-                            adapt.add(str);
-
-                        }
-                    }
-
-                    }
-
+                String str = adapter.getItem(position - 1);
+                adapt.add(str);
+            }
         });
 
     }
