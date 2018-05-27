@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal">
 
         <TextView
@@ -19,7 +19,9 @@
             android:layout_marginTop="10dp"
             android:layout_weight="2"
             android:text="@string/explain"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#303F9F"
+            android:textSize="18sp" />
 
 
     </LinearLayout>

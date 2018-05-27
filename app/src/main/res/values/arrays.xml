@@ -6,7 +6,7 @@
         <item>APPLIED MATHS</item>
         <item>ART</item>
         <item>BIOLOGY</item>
-        <item>BUSINESs STUD.</item>
+        <item>BUSINESS STUD.</item>
         <item>CHEMISTRY</item>
         <item>ENGLISH</item>
         <item>FRENCH</item>
@@ -25,6 +25,14 @@
         <item>SPANISH</item>
         <item>TECH. GRAPHICS</item>
         <item>TECH. AND DESIGN</item>
+
+    </string-array>
+
+    <string-array name="educational_websites">
+
+        <item>"https://businesseducation.ie/about/"</item>
+        <item>"https://acesolutionbooks.com/list-useful-maths-websites-secondary-school-students/"</item>
+        <item>"https://www.studentartguide.com/resources/best-art-teacher-blogs"</item>
 
     </string-array>
 

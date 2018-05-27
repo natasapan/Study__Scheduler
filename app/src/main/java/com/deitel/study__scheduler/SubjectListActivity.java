@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,21 +18,22 @@ import java.util.ArrayList;
  */
 
 public class SubjectListActivity extends AppCompatActivity{
-    String[] mSubArray;
-    ArrayList<String> mTaskArray;
+    private String[] mSubArray;
+    private ArrayList<String> mTaskArray;
     private String str;
+    private String date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects_list);
-
-
 
         final ArrayAdapter<String> adapter;
         final ArrayAdapter<String> adapt;
 
         final ListView taskLv = (ListView) findViewById(R.id.taskListView);
         final ListView subjectLv = (ListView) findViewById(R.id.subjectsListView);
+
+        date = getIntent().getStringExtra("DATE");
 
         LayoutInflater inflater = getLayoutInflater();
         ViewGroup header = (ViewGroup)inflater.inflate(R.layout.task_list_header,taskLv,false);
@@ -59,20 +61,37 @@ public class SubjectListActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    str = adapt.getItem(position - 1);
-                    Intent intent = new Intent(getApplicationContext(), TaskListActivity.class);
-                    intent.putExtra("SUBJECT", str);
-                    startActivity(intent);
+                        str = adapt.getItem(position - 1);
+                        Intent intent = new Intent(getApplicationContext(), TaskListActivity.class);
+                        intent.putExtra("SUBJECT", str);
+                        intent.putExtra("DATE", date);
+                        startActivity(intent);
             }
         });
 
         subjectLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String str = adapter.getItem(position - 1);
-                adapt.add(str);
+                if (adapt.getCount() == 0) {
+                    String str = adapter.getItem(position - 1);
+                    adapt.add(str);
+                }
+                    for (int i = 0; i < adapt.getCount(); i++) {
 
-            }
+                        if ((adapter.getItem(position - 1).equals(adapt.getItem(i)))) {
+                            Toast.makeText(SubjectListActivity.this, "You already added this subject",
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+
+                        } else {
+                            String str = adapter.getItem(position - 1);
+                            adapt.add(str);
+
+                        }
+                    }
+
+                    }
+
         });
 
     }

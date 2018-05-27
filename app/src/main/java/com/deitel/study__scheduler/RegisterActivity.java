@@ -35,7 +35,6 @@ public class RegisterActivity  extends AppCompatActivity {
 
         regButton.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View v) {
 
@@ -52,8 +51,8 @@ public class RegisterActivity  extends AppCompatActivity {
 
                     Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
                     startActivity(intent);
-               }
-           }
+                }
+            }
         });
 }
 

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -33,9 +34,10 @@ public class TaskListActivity extends AppCompatActivity {
     private Button surchButton;
     private TextView displayDate;
     private EditText et;
+    private Button searchInternet;
+    private String[] subjects;
+    private String[] sites;
     String[] valueOfEditText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,12 @@ public class TaskListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_list);
 
         displayDate = (TextView) findViewById(R.id.dateTextView);
+        displayDate.setText(getIntent().getStringExtra("DATE"));
+        displayDate.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         subject = (TextView) findViewById(R.id.subjectTextView);
         subject.setText(getIntent().getStringExtra("SUBJECT"));
+        subject.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         taskListView = (ListView) findViewById(R.id.itemListView);
         tlk = new TaskListAdapter(this);
@@ -103,9 +108,17 @@ public class TaskListActivity extends AppCompatActivity {
                 month = month + 1;
                 String date = dayOfMonth + "/"+ month + "/" + year;
                 displayDate.setText(date);
-
             }
         };
+        searchInternet = (Button) findViewById(R.id.searchButton);
+        searchInternet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                browsing(v);
+         }
+        });
+
 
         }
         public String[] getAllTasks(){
@@ -124,10 +137,20 @@ public class TaskListActivity extends AppCompatActivity {
 
         }
 
-        public void saveTasks(String[] tasks){
+        public void browsing(View v){
 
+        subjects = getResources().getStringArray(R.array.subject_list);
+        sites = getResources().getStringArray(R.array.educational_websites);
+        String name = getIntent().getStringExtra("SUBJECT");
 
+        for(int i = 0; i < subjects.length; i++){
+            if(subjects[i].equals(name)){
+                String esite = sites[i];
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(esite));
+                startActivity(browserIntent);
 
+            }
+        }
         }
     }
 

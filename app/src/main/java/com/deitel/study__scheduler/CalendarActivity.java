@@ -27,8 +27,10 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 int monthi = month + 1;
+                String date = dayOfMonth + "/"+ monthi + "/" + year;
                 Toast.makeText(getApplicationContext(), ""+dayOfMonth+"/"+monthi+"/"+year, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CalendarActivity.this, SubjectListActivity.class);
+                intent.putExtra("DATE",date);
                 startActivity(intent);
             }
         });

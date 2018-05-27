@@ -34,25 +34,25 @@ public class SignInActivity  extends AppCompatActivity {
 
         signIn.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
+        @Override
+        public void onClick(View v) {
 
-                signIn_username = usName.getText().toString();
-                signIn_password = pass.getText().toString();
+            signIn_username = usName.getText().toString();
+            signIn_password = pass.getText().toString();
 
-                if(signIn_username.length() == 0 || signIn_password.length() == 0){
-                    Toast.makeText(SignInActivity.this, message, Toast.LENGTH_LONG).show();
+            if(signIn_username.length() == 0 || signIn_password.length() == 0){
+                Toast.makeText(SignInActivity.this, message, Toast.LENGTH_LONG).show();
 
-                }else try {
-                    userSignIn(v);
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            }else try {
+                userSignIn(v);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        });
-    }
+        }
+    });
+}
 
     public void userSignIn(View v) throws ExecutionException, InterruptedException {
 
@@ -70,7 +70,6 @@ public class SignInActivity  extends AppCompatActivity {
              Intent intent = new Intent(SignInActivity.this, CalendarActivity.class);
              startActivity(intent);
          }
-
         finish();
     }
 }
