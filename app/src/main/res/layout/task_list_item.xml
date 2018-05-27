@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemLayout"
-    android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:scrollIndicators="top">
 
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText android:id="@+id/ItemCaption"
+    <TextView
+        android:id="@+id/ItemCaption"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="2dip"
-        android:inputType="textMultiLine"
-        android:lines="4"
-        android:gravity="top|left"
-        android:maxLines="4">
-    </EditText>
+        android:layout_marginStart="2dip"
+        android:gravity="top|start"
+        android:lines="6"
+        android:maxLines="6" />
+
+    <Button
+        android:id="@+id/removeItem"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_close_black_24dp" />
 
 </LinearLayout>
