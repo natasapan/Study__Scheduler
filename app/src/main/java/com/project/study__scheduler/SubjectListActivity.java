@@ -22,6 +22,8 @@ public class SubjectListActivity extends AppCompatActivity{
     private ArrayList<String> mTaskArray;
     private String str;
     private String date;
+    private static final String SUBJECT_KEY = "subject";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class SubjectListActivity extends AppCompatActivity{
 
         final ArrayAdapter<String> adapter;
         final ArrayAdapter<String> adapt;
+        final ArrayAdapter<String> adapti;
 
         final ListView taskLv = (ListView) findViewById(R.id.taskListView);
         final ListView subjectLv = (ListView) findViewById(R.id.subjectsListView);
@@ -51,6 +54,7 @@ public class SubjectListActivity extends AppCompatActivity{
         subjectLv.setAdapter(adapter);
 
         mTaskArray = new ArrayList<>();
+
         adapt = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -74,6 +78,8 @@ public class SubjectListActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String str = adapter.getItem(position - 1);
                 adapt.add(str);
+                view.setEnabled(false);
+                view.setOnClickListener(null);
             }
         });
 

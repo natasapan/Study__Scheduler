@@ -36,23 +36,20 @@ public class RegisterActivity  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
-                startActivity(intent);
+               name = nameEdit.getText().toString();
+               userName = userNameEdit.getText().toString();
+              password = passwordEdit.getText().toString();
 
-//                name = nameEdit.getText().toString();
-//                userName = userNameEdit.getText().toString();
-//                password = passwordEdit.getText().toString();
-//
-//                if(name.length() == 0 || userName.length() == 0 || password.length() == 0){
-//                    Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
-//
-//                } else {
-//
-//                    userRegister(v);
-//
-//                    Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
-//                    startActivity(intent);
-//                }
+               if(name.length() == 0 || userName.length() == 0 || password.length() == 0){
+                    Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    userRegister(v);
+
+                    Intent intent = new Intent(RegisterActivity.this, CalendarActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 }

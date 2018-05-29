@@ -1,10 +1,12 @@
 package com.project.study__scheduler;
 
+
+
 /**
  * Created by natas on 4/19/2018.
  */
 
-public class Task {
+public class Task{
 private String task;
 private int id;
 private String subject;

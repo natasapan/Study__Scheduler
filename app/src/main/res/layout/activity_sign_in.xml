@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_horizontal_margin"
             android:hint="@string/hint_text_password"
-            android:inputType="textEmailAddress|textNoSuggestions"/>
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/sign_in_button"

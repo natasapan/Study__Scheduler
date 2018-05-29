@@ -51,7 +51,8 @@
         android:name=".SubjectListActivity"
         android:label="@string/app_name"
         android:theme="@style/AppTheme.NoActionBar"
-        android:parentActivityName=".CalendarActivity">
+        android:parentActivityName=".CalendarActivity"
+            android:configChanges="keyboardHidden|orientation">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".CalendarActivity" />
@@ -61,7 +62,8 @@
             android:name=".TaskListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".SubjectListActivity">
+            android:parentActivityName=".SubjectListActivity"
+            android:configChanges="keyboardHidden|orientation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SubjectListActivity" />

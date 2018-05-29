@@ -29,14 +29,12 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
     private Context mContext;
     private ArrayList<Task> tasks;
     private DatabaseHelper dbHelper;
-    private  Map<Integer, View> taskListViews;
 
      TaskListAdapter(Context context, ArrayList<Task> tasks) {
         super(context, 0, tasks);
         this.mContext = context;
         this.tasks = tasks;
         this.dbHelper = new DatabaseHelper(context);
-        this.taskListViews = taskListViews;
     }
 
     @Override
@@ -47,7 +45,6 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
         if (listItemView == null) {
             holder = new ViewHolder();
             listItemView = LayoutInflater.from(mContext).inflate(R.layout.task_list_item, parent, false);
-
             final TextView taskTextView = (TextView) listItemView.findViewById(R.id.ItemCaption);
             CheckBox checkBox = (CheckBox) listItemView.findViewById(R.id.checkbox);
             Button removeButton = (Button) listItemView.findViewById(R.id.removeItem);

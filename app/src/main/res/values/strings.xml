@@ -19,7 +19,7 @@
     <string name="date">Date</string>
     <string name="select">Select a date to create subjects list</string>
     <string name="done">Back</string>
-    <string name="explain">Select subjects on the left. Click selected subjects on the right to opet subject\'s task list.</string>
+    <string name="explain">Select subjects on the left. Click selected subjects on the right to open subject\'s task list.</string>
     <string name="saved_lists">Search tasks</string>
     <string name="enter_date">Click on desired date</string>
     <string name="subject_list">LIST OF SUBJECTS</string>

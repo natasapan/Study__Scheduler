@@ -34,8 +34,9 @@ public class TaskListActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private TextView displayDate;
     private DatabaseHelper dbHelper;
-
-    String[] valueOfEditText;
+    final String TASKS = "tasks";
+    private String currentDate;
+    private String subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +45,10 @@ public class TaskListActivity extends AppCompatActivity {
         final Button timerButton;
         final Button searchButton;
         final TextView subjectTextView;
-        final String currentDate = getIntent().getStringExtra("DATE");
+        currentDate = getIntent().getStringExtra("DATE");
         final Button searchInternet;
         dbHelper = new DatabaseHelper(getApplicationContext());
+        subject = getIntent().getStringExtra("SUBJECT");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
@@ -56,7 +58,6 @@ public class TaskListActivity extends AppCompatActivity {
 
         subjectTextView = (TextView) findViewById(R.id.subjectTextView);
 
-        final String subject = getIntent().getStringExtra("SUBJECT");
         subjectTextView.setText(subject);
 
         subjectTextView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
@@ -130,6 +131,8 @@ public class TaskListActivity extends AppCompatActivity {
                 month = month + 1;
                 String date = dayOfMonth + "/" + month + "/" + year;
                 displayDate.setText(date);
+                taskListAdapter.clear();
+                taskListAdapter.addAll(getAllTasks(date, subject));
             }
         };
 
@@ -175,5 +178,6 @@ public class TaskListActivity extends AppCompatActivity {
             }
         }
     }
+
 }
 
